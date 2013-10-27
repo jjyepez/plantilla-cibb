@@ -1,0 +1,102 @@
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+
+class Modelo_base_m extends CI_Model {
+
+    function __construct(){
+         parent::__construct();
+    }
+    
+ 
+public function listar_alimentos(){
+	$this->db->select('id, codigo_alimento, codigo_clasificacion_alimento, nombre_alimento, categoria_alimento,  cantidad_caloria, cantidad_proteina, cantidad_grasa, cantidad_carbohidrato_disponible, cantidad_carbohidrato_total');
+	$this->db->from('cobi.v_lista_alimentos');
+
+        $datos = $this->db->get();
+
+        $datos = $datos->result_array();
+        //print_r($datos);die;
+        return $datos;
+}
+
+
+//mostrar 
+public function informacion_alimentos($id_registro){
+	$this->db->select('id, codigo_alimento, codigo_clasificacion_alimento, nombre_alimento, categoria_alimento,  cantidad_caloria, cantidad_proteina, cantidad_grasa, cantidad_carbohidrato_disponible, cantidad_carbohidrato_total');
+	$this->db->from('cobi.v_lista_alimentos');
+	$this->db->where('codigo_alimento',$id_registro);
+        $datos = $this->db->get();
+
+        $datos = $datos->result_array();
+        //print_r($datos);die;
+        return $datos;
+}
+
+
+
+public function micronutrientes_alimentos($id_registro){
+	$this->db->select('id, codigo_alimento, codigo_micronutriente_alimento, codigo_micronutriente, descripcion, cantidad_micronutriente');
+	$this->db->from('cobi.v_micronutriente_alimento');
+	$this->db->where('codigo_alimento',$id_registro);
+        $datos = $this->db->get();
+
+        $datos = $datos->result_array();
+        //print_r($datos);die;
+        return $datos;
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

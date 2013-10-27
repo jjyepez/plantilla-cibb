@@ -1,0 +1,98 @@
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+
+class S extends CI_Controller {
+
+    public function __construct() {
+        parent::__construct();
+    }
+   
+	public function index(){
+    //metodo invocado por omision en el controlador ..... jjy
+		$this->listar_registros();
+	}
+
+  // métodos de control principal CRUD !!!!! ..... jjy *****************
+  public function listar_registros(){
+
+
+	$datos ['informacion']=$this->modelo_base_m->listar_alimentos();
+
+	//prp($datos,1);
+
+    // llamado a la vista ... jjy
+    $this->load->view( 'crud/listar_registros_v',$datos );
+  }
+  
+  public function registro( $operacion = 'm', $id_registro = '' ){
+    // las operaciones pueden ser 'm'= mostrar; 'n'= nuevo; 'e'= editar ...... jjy ... experimental
+    // en este punto se deberían volver a validar los permisos para la acción solicitada .... jjy
+	
+
+
+	$datos ['informacion']=$this->modelo_base_m->listar_alimentos();
+
+	$informacion_alimento=$this->modelo_base_m->informacion_alimentos($id_registro);
+
+	$micronutrientes_alimento=$this->modelo_base_m->micronutrientes_alimentos($id_registro);
+foreach($informacion_alimento as $valor){
+foreach($valor as $indice=>$valor1){
+
+$informacion[$indice]=$valor1;
+
+
+
+
+
+
+
+
+
+}
+} 
+
+
+
+
+
+
+
+
+
+
+prp($informacion_alimento);
+prp($informacion);
+    $variables= array(
+      'operacion'           => $operacion,
+      'id_registro'         => $id_registro,
+      'informacion_alimento' => $informacion,    
+      'micronutrientes_alimento' => $micronutrientes_alimento, 
+
+      );
+   $this->load->view( 'crud/registro_v', $variables );
+
+   
+
+
+ }
+
+  public function eliminar_registro( $id ){
+    echo "eliminar registro $id";
+  }
+
+  public function imprimir_registro($id_registro ){
+    echo "imprimir registro $id";
+  }
+
+  public function filtrar_registros(){
+    echo "filtrar registro";
+  }
+
+  public function vista_preliminar_registro( $id_registro ){
+    echo "vista preliminar registro $id";
+  }
+
+  public function exportar_registros(){
+    echo "exportar registros";
+  }
+  // *******************************************************************
+}

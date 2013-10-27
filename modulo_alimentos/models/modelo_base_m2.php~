@@ -1,0 +1,161 @@
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+
+class Modelo_base_m extends CI_Model {
+
+    function __construct(){
+         parent::__construct();
+    }
+    
+ 
+public function listar_categoria_alimento(){
+	$this->db->select('codigo_categoria_alternativa, descripcion');
+	$this->db->from('cobi.t_categoria_alternativa');
+
+        $datos = $this->db->get();
+
+        $datos = $datos->result_array();
+        //print_r($datos);die;
+        return $datos;
+}
+
+
+
+public function listar_nombre_alimento(){
+	$this->db->select('codigo_alimento, nombre_alimento');
+	$this->db->from('cobi.t_alimentos');
+
+        $datos = $this->db->get();
+
+        $datos = $datos->result_array();
+        //print_r($datos);die;
+        return $datos;
+    }
+
+public function listar_detalle_alimento(){
+	$this->db->select('codigo_unidad_medida_venta, equivalente_gramo_venta, factor_desecho');
+	$this->db->from('cobi.t_detalle_alimento');
+
+        $datos = $this->db->get();
+
+        $datos = $datos->result_array();
+        //print_r($datos);die;
+        return $datos;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ public function listar_estatus(){
+        $this->db->select('codigo_estatus, nombre_estatus');
+        $this->db->from('eva.t_estatus');
+
+        $datos = $this->db->get();
+
+        $datos = $datos->result_array();
+        //print_r($datos);die;
+        return $datos;
+    }
+
+     public function listar_instrumentos(){
+        $this->db->select('codigo_instrumento, nombre_instrumento');
+        $this->db->from('eva.t_instrumentos');
+
+        $datos = $this->db->get();
+
+        $datos = $datos->result_array();
+        //print_r($datos);die;
+        return $datos;
+    }
+
+  public function insertar_apertura($id , $datos = array() ){
+    //prp($datos);
+           /* $codigo_estatus = datos['codigo_estatus'] ;
+            unset($datos['codigo_estatus']);*/
+        $insertar = $this->db->insert('eva.t_procesos', $datos);
+
+         if (  $insertar == 1 ){
+            $id              = $this->db->insert_id();
+            $id_cadena       = ( string ) $id;
+            $codigo_proceso = 'PR'.str_repeat('0',4 - strlen( $id_cadena ) ).$id_cadena;
+            //echo $codigo_proceso;die;
+            
+       
+            $data = array(
+               'codigo_proceso' => $codigo_proceso,
+            );
+
+            $this->db->where('id', $id);
+            $this->db->update('eva.t_procesos', $data);
+        }
+
+
+        //$insertar = $this->db->insert('eva.t_estatus', $codigo_estatus);
+
+
+        return $insertar;
+
+    }
+
+
+
+    public function listar_procesos(){
+        $salida = array();
+        $this->db->distinct();
+        $this->db->select('codigo_proceso, nombre_proceso, ano, encuestas_estimadas, nombre_estatus');
+        $this->db->from( 'eva.v_procesos' );
+        $this->db->order_by( 'codigo_proceso' );
+
+
+        $rs = $this->db->get();
+        
+        $salida = $rs->result_array();
+            //echo '<pre>',print_r($salida),'</pre>';die;
+        return $salida;
+    }
+
+    public function mostrar_proceso($codigo_proceso){
+        $salida = array();
+        $this->db->select('nombre_proceso, codigo_proceso, ano_proceso_desde, ano_proceso_hasta, nombre_estatus, encuestas_estimadas, fecha_proceso_inicio, fecha_proceso_final, nombre_instrumento, nombre_estado');
+        $this->db->from( 'eva.v_mostrar' );
+        $this->db->where('codigo_proceso', $codigo_proceso);
+        $rs = $this->db->get();
+        
+        $salida = $rs->result_array();
+            //echo '<pre>',print_r($salida),'</pre>';die;
+        return $salida;
+
+    }
+
+}

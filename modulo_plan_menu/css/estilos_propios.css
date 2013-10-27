@@ -1,0 +1,157 @@
+/* Estilos específicos de este modulo ** ... jjy **/
+body {
+  margin: 0;
+  margin-right: 5px;
+}
+form table {
+  padding: 0;
+  border-collapse: collapse;
+}
+.campo_con_errores {
+  border: 1px solid rgba(250, 0, 0, 0.75) !important;
+}
+.campo_ok {
+  border: inherit;
+}
+label.campo_con_errores {
+  border: 0 !important;
+}
+.mensaje {
+  top: 45px !important;
+}
+#mensaje_validacion {
+  top: 45px;
+}
+.puntero_lista {
+  margin-bottom: -4px;
+  width: 14px;
+  height: auto;
+  opacity: 0.5;
+}
+.puntero_lista:hover {
+  opacity: 0.9;
+}
+.scroll-overflow {
+  overflow: auto;
+}
+.tabla-simplificada {
+  padding: 0;
+  border-collapse: collapse;
+  margin: 0;
+  border-bottom: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+}
+.tabla-interactiva,
+.tabla-interactiva td,
+.tabla-interactiva th {
+  padding: 0;
+  border-collapse: collapse;
+  margin: 0;
+  padding: 2px 3px;
+  /*font-family: "OpenSans-Condensada";*/
+
+}
+.tabla-interactiva td,
+.tabla-interactiva th {
+  border-left: 1px solid #ddd;
+  border-top: 1px solid #ddd;
+}
+.tabla-interactiva th {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+.tabla-interactiva {
+  border-bottom: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+}
+.cuadro-tiempo-comida {
+  position: relative;
+  border-collapse: collapse;
+  border: 1px solid #ddd !important;
+  height: 100px !important;
+}
+.cuadro-tiempo-comida > div.opcion-menu {
+  /*border: 1px dashed red;*/
+
+  width: 20px;
+  height: 100%;
+  float: left;
+  vertical-align: top;
+}
+.cuadro-tiempo-comida > div.opcion-menu-mostrado {
+  position: relative;
+  /*border: 1px dashed blue;*/
+
+  /*height: 100%;*/
+
+  vertical-align: top;
+  right: 0;
+  overflow: auto;
+}
+.rotado {
+  /* Safari */
+
+  -webkit-transform: rotate(-90deg);
+  /* Firefox */
+
+  -moz-transform: rotate(-90deg);
+  /* IE */
+
+  -ms-transform: rotate(-90deg);
+  /* Opera */
+
+  -o-transform: rotate(-90deg);
+  /* Internet Explorer */
+
+  filter: progid:dximagetransform.microsoft.basicimage(rotation=3);
+}
+.ajuste-texto-opcion {
+  background-color: rgba(0, 0, 0, 0.05);
+  position: relative;
+  top: 75px;
+}
+.ajuste-nombre-tiempo {
+  position: relative;
+  top: 0px;
+  width: 20px;
+}
+.celda-nombre-tiempo {
+  vertical-align: bottom;
+  position: relative;
+}
+.celda-maximizar {
+  width: 0;
+  height: 0;
+  padding: 5px;
+}
+/**************************************/
+.velo-blanco {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.75);
+  z-index: 1000;
+}
+.cerrar-velo-blanco {
+  position: relative;
+  top: 0;
+}
+#contenedor_dialogo {
+  background-color: #fff;
+  position: relative;
+  width: 600px;
+  height: 350px;
+  border: 1px solid #ccc;
+  margin: 0 auto;
+  margin-top: 75px;
+  border-radius: 7px;
+  box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.25);
+  padding: 10px;
+}
+.pestanas li a {
+  color: #555 !important;
+}
+.pestanas li.activo a {
+  color: #333 !important;
+}

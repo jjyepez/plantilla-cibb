@@ -1,0 +1,87 @@
+//http://www.bloggure.info/work/gitlabhq.html
+
+/** DEFINICIONES DE FUENTES LIBRES - independientes de la plataforma! .. jjy ***/
+@nombre_fuente     : OpenSans;
+@nombre_archivo    : ~"webfonts/Roboto/Roboto";
+//@nombre_archivo    : ~"webfonts/OpenSans/OpenSans";
+
+@archivo_regular   : ~" @{nombre_archivo}-Regular";
+@archivo_bold      : ~" @{nombre_archivo}-Bold";
+@archivo_italic    : ~" @{nombre_archivo}-Italic";
+@archivo_bolditalic: ~" @{nombre_archivo}-BoldItalic";
+@archivo_condensed : ~" @{nombre_archivo}-RegularCondensed";
+@archivo_boldcondensed: ~" @{nombre_archivo}-BoldCondensed"; 
+
+
+@font-face{ /** OpenSans REGULAR NORMAL **/
+   font-style : normal;
+   font-weight: normal; 
+
+   font-family: @nombre_fuente; 
+   font-stretch: normal;
+   src: url(~"@{archivo_regular}.eot ");
+   src: url(~"@{archivo_regular}.eot?iefix") format('eot'), 
+        url(~"@{archivo_regular}.woff ") format('woff'), 
+        url(~"@{archivo_regular}.ttf ") format('truetype'), 
+        url(~"@{archivo_regular}.svg#webfont ") format('svg'); 
+}
+@font-face{ /** OpenSans BOLD NORMAL **/
+   font-style : normal;
+   font-weight: bold;
+
+   font-family: @nombre_fuente; 
+   font-stretch: normal;
+   src: url(~"@{archivo_bold}.eot ");
+   src: url(~"@{archivo_bold}.eot?iefix") format('eot'), 
+        url(~"@{archivo_bold}.woff ") format('woff'), 
+        url(~"@{archivo_bold}.ttf ") format('truetype'), 
+        url(~"@{archivo_bold}.svg#webfont ") format('svg'); 
+}
+@font-face{ /** OpenSans REGULAR ITALIC **/
+   font-style : italic;
+   font-weight: normal;
+
+   font-family: @nombre_fuente; 
+   font-stretch: normal;
+   src: url(~"@{archivo_italic}.eot ");
+   src: url(~"@{archivo_italic}.eot?iefix") format('eot'), 
+        url(~"@{archivo_italic}.woff ") format('woff'), 
+        url(~"@{archivo_italic}.ttf ") format('truetype'), 
+        url(~"@{archivo_italic}.svg#webfont ") format('svg'); 
+}
+@font-face{ /** OpenSans BOLD ITALIC **/
+   font-style : italic;
+   font-weight: bold;
+
+   font-family: @nombre_fuente; 
+   font-stretch: normal;
+   src: url(~"@{archivo_bolditalic}.eot ");
+   src: url(~"@{archivo_bolditalic}.eot?iefix") format('eot'), 
+        url(~"@{archivo_bolditalic}.woff ") format('woff'), 
+        url(~"@{archivo_bolditalic}.ttf ") format('truetype'), 
+        url(~"@{archivo_bolditalic}.svg#webfont ") format('svg'); 
+}
+@font-face{ /** OpenSans CONDENSED NORMAL **/
+   font-style : normal;
+   font-weight: normal;
+
+   font-family: ~"@{nombre_fuente}-Condensada"; 
+   font-stretch: condensed;
+   src: url(~"@{archivo_condensed}.eot ");
+   src: url(~"@{archivo_condensed}.eot?iefix") format('eot'), 
+        url(~"@{archivo_condensed}.woff ") format('woff'), 
+        url(~"@{archivo_condensed}.ttf ") format('truetype'), 
+        url(~"@{archivo_condensed}.svg#webfont ") format('svg'); 
+}
+@font-face{ /** OpenSans CONDENSED BOLD **/
+   font-style : normal;
+   font-weight: bold;
+
+   font-family: ~"@{nombre_fuente}-Condensada"; 
+   font-stretch: condensed;
+   src: url(~"@{archivo_boldcondensed}.eot ");
+   src: url(~"@{archivo_boldcondensed}.eot?iefix") format('eot'), 
+        url(~"@{archivo_boldcondensed}.woff ") format('woff'), 
+        url(~"@{archivo_boldcondensed}.ttf ") format('truetype'), 
+        url(~"@{archivo_boldcondensed}.svg#webfont ") format('svg'); 
+}
