@@ -48,11 +48,11 @@
 $active_group = 'default';
 $active_record = TRUE;
 
-$db['default']['hostname'] = '172.30.0.83';
+$db['default']['hostname'] = 'localhost';
 $db['default']['database'] = 'desarrollo';
 
 $db['default']['username'] = 'postgres';
-$db['default']['password'] = 'inndesarrollo';
+$db['default']['password'] = '321321';
 
 $db['default']['dbdriver'] = 'postgre';
 $db['default']['dbprefix'] = '';

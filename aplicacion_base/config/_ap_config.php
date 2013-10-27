@@ -24,16 +24,16 @@ $base_url = str_replace( '/index.php', '/', $script );
 
 $config ['aplicacion'] = array(
 
-  'plantilla_osti'  => 'v.1.1.2b',
+  'plantilla_osti'  => 'v.2.0.0b',
   'id'              => 'SIST01',
-  'nombre_completo' => 'Sistema de Apoyo a la Generación de Planes de Menú (v0.1b)',
-  'nombre_corto'    => 'SiGesA (CoBi)',
+  'nombre_completo' => 'Nombre del Sistema',
+  'nombre_corto'    => 'Sistema (X)',
   'version_mayor'   => '0',
   'version_menor'   => '1',
   
   'mostrar_encabezado_gobierno' => TRUE,
   
-  'descripcion'     => 'Sistema de Apoyo a la Generación de Planes de Menú para la Dirección de Redes de Alimentación del INN.',
+  'descripcion'     => 'Descripción del sistema',
   'mostrar_logo'    => FALSE,
   'mostrar_titulo'  => TRUE,
   'mostrar_portada' => TRUE,

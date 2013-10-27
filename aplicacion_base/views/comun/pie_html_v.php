@@ -14,6 +14,7 @@
       </div>
 
    </footer>
+   <script src="<?=base_url()?>libs/bootstrap-3/js/bootstrap.min.js"> //la buena práctica sugiere que los scripts deben ir al final del documento </script>
    <script src="<?=base_url()?>js/scripts.js"> //la buena práctica sugiere que los scripts deben ir al final del documento </script>
 </body>
 </html>

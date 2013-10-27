@@ -30,9 +30,13 @@
   bottom: 40px;
   //.resaltar();
 }
-body {
+h1,h2,h3,h4,h5,h6,label,td {
   font-family: OpenSans; //, DejaVu, Arial, sans-serif
-  font-size: 0.85em;
+  font-weight: normal;
+}
+html, 
+body {
+  font-size: 1em;
   margin: 0;
   background-color: #fff;
   color: #333;
@@ -970,6 +974,8 @@ form.formulario-tabla { //*********************************** formulario-tabla .
 .titulo-portada {
   text-align: center;
   margin: 25px 0 10px 0;
+  font-weight: 300;
+  font-size: 2.2em;
 }
 .encabezado_gobierno{
   position: fixed;
@@ -1000,6 +1006,7 @@ form.formulario-tabla { //*********************************** formulario-tabla .
   display: block;
   position: fixed !important;
   width: 100%;
+  z-index: 10;
 }
 .titulo-cintillo {
   font-weight: normal;

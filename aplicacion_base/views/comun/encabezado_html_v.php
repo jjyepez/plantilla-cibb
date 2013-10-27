@@ -26,8 +26,10 @@
 	<meta charset="utf-8"/>
   <?=$html_redirect?>
 
-  <link rel="stylesheet" type="text/css" href="<?=base_url()?>libs/font-awesome/css/bootstrap-combined.no-icons.min.css">
+  <link rel="stylesheet" type="text/css" href="<?=base_url()?>libs/bootstrap-3/css/bootstrap.min.css">
+  
   <link rel="stylesheet" type="text/css" href="<?=base_url()?>libs/font-awesome/css/font-awesome.min.css"> 
+  <link rel="stylesheet" type="text/css" href="<?=base_url()?>libs/font-awesome-4/css/font-awesome.min.css"> 
 
 	<title><?=$config['aplicacion']['nombre_corto']?> - <?=$pestanas[$seccion_activa]?></title>
   
@@ -77,7 +79,7 @@
 
 <body>
 
-  <header>
+  <header style="z-index:5;">
 
 <?php if ( $config['aplicacion']['mostrar_encabezado_gobierno'] ) { ?>
 
@@ -157,9 +159,127 @@
 
 		</div>
 
-		<nav>
+		<!--nav-->
 
-			<div class="barra-botones">
+
+
+
+
+<!--div class="navbar navbar-default">
+  <div class="container ancho-maximo">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="./" class="navbar-brand">Bootstrap</a>
+    </div>
+    <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav">
+        <li>
+          <a href="./getting-started">Getting started</a>
+        </li>
+        <li>
+          <a href="./css">CSS</a>
+        </li>
+        <li>
+          <a href="./components">Components</a>
+        </li>
+        <li>
+          <a href="./javascript">JavaScript</a>
+        </li>
+        <li>
+          <a href="./customize">Customize</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div-->
+
+
+
+
+
+<div class="navbar navbar-inverse navbar-static-top hidden-print">
+  <div class="container ancho-maximo">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <i class="fa fa-reorder fa-lg"></i>
+      </button>
+      <a class="navbar-brand" href="../"><i class="fa fa-flag"></i> Font Awesome</a>
+    </div>
+
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li class="hidden-sm "><a href="../">Home</a></li>
+        <li class="hidden-sm">
+          <a href="../whats-new/">What's New</a>
+        </li>
+        <li class="hidden-xs hidden-md hidden-lg">
+          <a href="../whats-new/">New</a>
+        </li>
+        <li><a href="../get-started/">Get Started</a></li>
+        <li class="dropdown-split-left active"><a href="../icons/">Icons</a></li>
+        <li class="dropdown dropdown-split-right hidden-xs active">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <i class="fa fa-caret-down"></i>
+          </a>
+          <ul class="dropdown-menu pull-right">
+            <li><a href="../icons/"><i class="fa fa-flag fa-fw"></i>&nbsp; Icons</a></li>
+            <li class="divider"></li>
+            <li><a href="../icons/#new"><i class="fa fa-rub fa-fw"></i>&nbsp; New Icons in 4.0</a></li>
+            <li><a href="../icons/#web-application"><i class="fa fa-camera-retro fa-fw"></i>&nbsp; Web Application Icons</a></li>
+            <li><a href="../icons/#form-control"><i class="fa fa-check-square fa-fw"></i>&nbsp; Form Control Icons</a></li>
+            <li><a href="../icons/#currency"><i class="fa fa-won fa-fw"></i>&nbsp; Currency Icons</a></li>
+            <li><a href="../icons/#text-editor"><i class="fa fa-file-text-o fa-fw"></i>&nbsp; Text Editor Icons</a></li>
+            <li><a href="../icons/#directional"><i class="fa fa-hand-o-right fa-fw"></i>&nbsp; Directional Icons</a></li>
+            <li><a href="../icons/#video-player"><i class="fa fa-play-circle fa-fw"></i>&nbsp; Video Player Icons</a></li>
+            <li><a href="../icons/#brand"><i class="fa fa-github fa-fw"></i>&nbsp; Brand Icons</a></li>
+            <li><a href="../icons/#medical"><i class="fa fa-medkit fa-fw"></i>&nbsp; Medical Icons</a></li>
+          </ul>
+        </li>
+        <li class="dropdown-split-left"><a href="../examples/">Examples</a></li>
+        <li class="dropdown dropdown-split-right hidden-xs">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <i class="fa fa-caret-down"></i>
+          </a>
+          <ul class="dropdown-menu pull-right">
+            <li><a href="../examples/">Examples</a></li>
+            <li class="divider"></li>
+            <li><a href="../examples/#inline">Inline Icons</a></li>
+            <li><a href="../examples/#larger">Larger Icons</a></li>
+            <li><a href="../examples/#fixed-width">Fixed Width Icons</a></li>
+            <li><a href="../examples/#list">List Icons</a></li>
+            <li><a href="../examples/#bordered-pulled">Bordered &amp; Pulled Icons</a></li>
+            <li><a href="../examples/#spinning">Spinning Icons</a></li>
+            <li><a href="../examples/#rotated-flipped">Rotated &amp; Flipped Icons</a></li>
+            <li><a href="../examples/#stacked">Stacked Icons</a></li>
+            <li><a href="../examples/#bootstrap">Bootstrap 3 Examples</a></li>
+            <li><a href="../examples/#custom">Custom CSS</a></li>
+          </ul>
+        </li>
+        <li><a href="../community/">Community</a></li>
+        <li><a href="../license/">License</a></li>
+      </ul>
+      <!--ul class="nav navbar-nav navbar-right">
+        <li><a href="http://blog.fontawesome.io">Blog</a></li>
+      </ul-->
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+			<!--div class="barra-botones">
 
 				<ul class="botones-barra">
 					
@@ -202,9 +322,9 @@
 
 				</ul>
 
-			</div>
+			</div-->
 
-		</nav>
+		<!--/nav-->
 
 	</div>
 

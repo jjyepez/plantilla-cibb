@@ -2,8 +2,8 @@
 
 /** DEFINICIONES DE FUENTES LIBRES - independientes de la plataforma! .. jjy ***/
 @nombre_fuente     : OpenSans;
-@nombre_archivo    : ~"webfonts/Roboto/Roboto";
-//@nombre_archivo    : ~"webfonts/OpenSans/OpenSans";
+//@nombre_archivo    : ~"webfonts/Roboto/Roboto";
+@nombre_archivo    : ~"webfonts/OpenSans/OpenSans";
 
 @archivo_regular   : ~" @{nombre_archivo}-Regular";
 @archivo_bold      : ~" @{nombre_archivo}-Bold";
@@ -11,7 +11,7 @@
 @archivo_bolditalic: ~" @{nombre_archivo}-BoldItalic";
 @archivo_condensed : ~" @{nombre_archivo}-RegularCondensed";
 @archivo_boldcondensed: ~" @{nombre_archivo}-BoldCondensed"; 
-
+@archivo_light : ~" @{nombre_archivo}-Light";
 
 @font-face{ /** OpenSans REGULAR NORMAL **/
    font-style : normal;
@@ -84,4 +84,16 @@
         url(~"@{archivo_boldcondensed}.woff ") format('woff'), 
         url(~"@{archivo_boldcondensed}.ttf ") format('truetype'), 
         url(~"@{archivo_boldcondensed}.svg#webfont ") format('svg'); 
+}
+@font-face{ /** OpenSans LIGHT **/
+   font-style : normal;
+   font-weight: 300;
+
+   font-family: ~"@{nombre_fuente}"; 
+   font-stretch: normal;
+   src: url(~"@{archivo_light}.eot ");
+   src: url(~"@{archivo_light}.eot?iefix") format('eot'), 
+        url(~"@{archivo_light}.woff ") format('woff'), 
+        url(~"@{archivo_light}.ttf ") format('truetype'), 
+        url(~"@{archivo_light}.svg#webfont ") format('svg'); 
 }
